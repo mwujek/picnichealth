@@ -1,1 +1,1 @@
-$(document).ready(function(){var n=$(".menu-btn"),c=$(".nav-section ul");n.on("click",function(){c.toggleClass("activeMenu")})});
+$(document).ready(function(){var n=$(".menu-btn"),c=$(".nav-section ul"),e=$(".nav-section .svg-container");n.on("click",function(){c.toggleClass("activeMenu"),e.toggleClass("btn-color-change")})});

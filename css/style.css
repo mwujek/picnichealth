@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700);
 body, html {
-  width: 100%; }
+  max-width: 100%;
+  overflow-x: hidden; }
 
 body {
   color: #001F3F; }
@@ -24,6 +25,16 @@ ul {
 
 .center-btn {
   text-align: center; }
+
+::selection {
+  background: #EA63BA;
+  color: white;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  background: #EA63BA;
+  color: white;
+  /* Gecko Browsers */ }
 
 .btn, .btn:link, .btn:visited {
   border-radius: 0.3em;
@@ -95,7 +106,9 @@ nav {
     display: inline-block;
     position: absolute;
     top: 6px;
-    right: 19px; }
+    right: 19px;
+    opacity: 1;
+    transition: 0.5s all; }
     nav .svg-container svg {
       transition: 0.3s all;
       fill: #777; }
@@ -160,6 +173,9 @@ nav {
   left: 0px !important;
   visibility: visible; }
 
+.btn-color-change {
+  opacity: 0.5 !important; }
+
 .intro-section {
   text-align: center;
   background: url(../img/product-intro.jpg);
@@ -177,6 +193,7 @@ nav {
 
 .product-features-section {
   background: url(../img/_white.jpg);
+  background-attachment: fixed;
   min-height: 700px; }
   .product-features-section h1, .product-features-section .btn {
     text-align: center; }
@@ -325,7 +342,7 @@ footer {
   footer hr {
     width: 60%; }
   footer .footer-contact {
-    margin-top: -20px;
+    margin-top: -20px !important;
     margin-bottom: 20px; }
     footer .footer-contact li {
       display: inline-block; }
@@ -412,7 +429,7 @@ Adjust the breakpoints as needed.
     display: none; }
 
   .product-photo {
-    margin-top: 95px;
+    margin-top: 153px;
     display: inline-block; }
 
   .product-features-section {
@@ -443,7 +460,7 @@ Adjust the breakpoints as needed.
     display: inline-block;
     width: 200px;
     height: 100px; } }
-footer ul {
+footer .footer-nav {
   margin-top: 20px !important; }
-footer li {
-  display: inline-block !important; }
+  footer .footer-nav li {
+    display: inline-block; }

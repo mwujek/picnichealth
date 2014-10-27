@@ -25,7 +25,8 @@ $end-section-bottom-margin:50px;
 
 // typography
 body, html{
-	width:100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 body{
 	color: $font-color;
@@ -59,7 +60,14 @@ ul{
 }
 //add CSS attr for text selection (pink or saturated color)
 
-
+::selection {
+	background: #EA63BA;
+  color:white; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: #EA63BA;
+  color:white; /* Gecko Browsers */
+}
 
 // Buttons
 
@@ -159,6 +167,8 @@ nav{
 		position: absolute;
 		top: 6px;
 		right: 19px;
+		opacity: 1;
+		transition:0.5s all;
 		
 		svg{
 			transition:0.3s all;
@@ -244,6 +254,12 @@ nav{
 	visibility: visible;
 }
 
+
+
+.btn-color-change{
+	opacity: 0.5 !important;
+}
+
 // Intro Section 
 .intro-section{
 	text-align: center;
@@ -273,6 +289,7 @@ img{
 
 .product-features-section{
 	background: url(../img/_white.jpg);
+	background-attachment: fixed;
 	min-height: 700px;
 	h1, .btn{
 		text-align: center;
@@ -507,7 +524,7 @@ footer{
 		width: 60%;
 	}
 	.footer-contact{
-		margin-top: -20px;
+		margin-top: -20px !important;
 		margin-bottom: 20px;
 
 		li{
@@ -640,7 +657,7 @@ nav{
 }
 
 .product-photo{
-	margin-top: 95px;
+	margin-top: 153px;
 	display: inline-block;
 }
 
@@ -700,14 +717,14 @@ nav{
 }
 
 // Footer section
-
 footer{
-	ul{
-		margin-top: 20px !important;
-	}
+.footer-nav{
+	margin-top: 20px !important;
+	
 	li{
-		display: inline-block !important;
+		display: inline-block;
 	}
+}
 }
 
 
