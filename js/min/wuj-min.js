@@ -1,1 +1,1 @@
-$(document).ready(function(){});
+$(document).ready(function(){var n=$(".menu-btn"),c=$(".nav-section ul");n.on("click",function(){c.toggleClass("activeMenu")})});
