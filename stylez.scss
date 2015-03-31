@@ -1,0 +1,764 @@
+// Background colors
+
+$how-it-works-bg:#34495E;
+$security-bg:#2980B8;
+$quotes-bg:#2ECB71;
+$press-bg:#27AD60;
+$footer-bg:#232424;
+
+// font & other colors
+$font-color:#001F3F;
+$blue-highlight:#0274D8;
+$dark-btn-bg: rgba(0,0,0,0.1);
+
+// media queries
+$smallest-size:48em;
+$largest-size:78em;
+
+// layout, padding, etc.
+
+$end-section-bottom-margin:50px;
+
+// add Oleo Script from Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700);
+
+
+// typography
+body, html{
+    max-width: 100%;
+    overflow-x: hidden;
+}
+body{
+	color: $font-color;
+}
+
+h1,h2,h3,h4,h5,h6{
+	font-family: "brandon-grotesque",sans-serif;
+	font-weight: 700;
+}
+p, li{
+	font-family: "merriweather",serif;
+	line-height: 20px;
+}
+
+ul{
+	padding:0;
+	margin: 0;
+}
+
+.section-title{ //this selects the title of each section
+	font-size: 2em;
+	margin-top: 50px;
+	line-height: 1.2em;
+}
+
+// button styles 
+
+.center-btn{// used to center button inside a parent element
+
+	text-align: center;
+}
+//add CSS attr for text selection (pink or saturated color)
+
+::selection {
+	background: #EA63BA;
+  color:white; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+	background: #EA63BA;
+  color:white; /* Gecko Browsers */
+}
+
+// Buttons
+
+.btn, .btn:link, .btn:visited {
+	border-radius: 0.3em;
+	border:1px solid #fff;
+	color: #fff;
+	background: rgba(216,104,171,0.4);
+	display: inline-block;
+	font-family: 'brandon-grotesque', helvetica, arial, sans-serif;
+	letter-spacing: 0.15em;
+	margin-bottom: 0.5em;
+	padding: 1em 0.75em;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: color 0.4s, background-color 0.4s, border 0.4s;
+	transition: color 0.4s, background-color 0.4s, border 0.4s;
+}
+
+.btn:hover, .btn:focus {
+	color: #fff;
+	background: rgba(216,104,171,1);
+	-webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.btn:active {
+	color: #ccc;
+	border: 1px solid #ccc;
+	-webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+.dark-btn{
+	color: $font-color !important;
+	border-color: $font-color !important;
+	background: $dark-btn-bg !important;
+	&:hover{
+		background: #ccc !important;
+	}
+
+	&:active{
+		background: #aaa !important;
+	}
+}
+
+.light-btn{
+	color: #fff !important;
+	border-color: #fff !important;
+	background: $dark-btn-bg !important;
+	&:hover{
+		background: #ccc !important;
+	}
+
+	&:active{
+		background: #aaa !important;
+	}
+}
+
+
+// Grid layout, sizing, and padding 
+.full-screen-container{
+	width:100%;
+}
+.content-container{
+	margin: 0 auto;
+//background: #aaa;
+max-width: 960px;
+}
+
+.padding-box{
+//background-color: red;
+padding: 10px;
+//border:1px solid black;
+}
+
+.margin-box{
+	margin-left: 10px;
+//outline:1px lightcoral  solid;
+}
+
+
+
+// Navigation (Top)
+
+nav{
+	background: #F8F8F8;
+	margin: 0;
+	height:52px;
+	padding: 5px;
+	border-bottom: 1px #E7E7E7 solid;
+	z-index: 50;
+
+	.svg-container{
+		width: 40px;
+		display: inline-block;
+		position: absolute;
+		top: 6px;
+		right: 19px;
+		opacity: 1;
+		transition:0.5s all;
+		
+		svg{
+			transition:0.3s all;
+			fill:#777;
+			&:active{
+				fill:#555;
+			}
+		}
+
+	}
+
+	.nav-title{
+		font-family: 'Oleo Script', cursive;
+		display: inline-block;
+		font-size: 1.7em;
+		color: #777;
+		font-weight: 300;
+
+	}
+	ul{
+		text-align: center;
+		display: block;
+		width: 100%;
+		margin:0;
+		padding:0;
+		text-indent: 0;
+		background: rgba(0,0,0,0.9);
+		padding-top: 20px;
+		border-bottom: 1px #999 solid;
+		z-index: 5;
+		position: absolute;
+		top:62px;
+		left: 110%;
+		transition:0.5s all;
+		visibility: hidden;
+	}
+
+	ul > li{
+		display: block;
+		padding:0;
+		margin: 0;
+		margin-left: 5px;
+		text-transform: uppercase;
+		font-family: 'brandon-grotesque',sans-serif;
+		a{
+			color:#aaa;
+			font-weight: 600;
+			font-size: 14px;
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+			line-height: 20px;
+			text-decoration: none;
+			transition:0.3s all;
+			&:hover{
+				color:#777;
+			}
+		}
+
+		.btn{
+			padding: 0.4em 0.75em !important;
+			margin-bottom: 20px !important;
+			margin-top: 10px !important;
+		}	
+	}
+}
+
+.nav-section{
+	background: #F8F8F8;
+	.content-container{
+		position: relative;
+	}
+	.nav-title{
+		position: absolute;
+		left:10px;
+		top:2px;
+	}
+}
+
+
+.activeMenu{
+	left:0px!important;
+	visibility: visible;
+}
+
+
+
+.btn-color-change{
+	opacity: 0.5 !important;
+}
+
+// Intro Section 
+.intro-section{
+	text-align: center;
+	background: url(../img/product-intro.jpg);
+	background-size: cover;
+	background-position: center bottom;
+//background-position: 0px 100px;
+color:#fff;
+min-height:380px;
+
+p{
+	font-style: italic;
+}
+
+img{
+	margin: 0 auto;
+	margin-top: 20%;
+}
+
+.btn{
+	margin-top: 20px;
+}
+}
+
+
+// Product Features Section
+
+.product-features-section{
+	background: url(../img/_white.jpg);
+	background-attachment: fixed;
+	min-height: 700px;
+	h1, .btn{
+		text-align: center;
+	}
+
+	ul > li{
+		text-align: center;
+		margin-bottom: 5px;
+		transition:0.8s all;
+		&:hover{
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		path{
+			transition:0.8s all;
+		}
+
+	}
+
+	ul > li > img{
+		margin:0 auto;
+		margin-top: 10px;
+		max-width: 80%;
+	}
+
+
+	.btn{
+		margin: 20px auto 30px auto;
+	}
+
+	// .active-check{
+	// 	fill: $blue-highlight;
+	// }
+
+
+
+
+	.svg-container{
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		width:30px;
+		height:30px;
+		position: relative;
+		top: 8px;
+	}
+
+	.center-btn{
+		margin-top: 20px;
+	}
+}
+
+.product-mobile{
+	display: block;
+}
+
+.product-photo{
+	display:none;
+}
+
+// How it works section
+.how-it-works-section{
+	text-align: center;
+	background: $how-it-works-bg;
+	color:#fff;
+
+	.svg-container{
+		display: inline-block;
+		width:80px;
+		height:80px;
+		margin-bottom: 0px;
+		img{
+			width: 100%;
+			height: 100%;
+			fill:#fff;
+		}
+	}
+
+	p{
+		font-style: italic;
+	}
+
+	.doctor .svg-container{
+		position: relative;
+		left:-10px;
+		top:10px;
+		margin-top: 10px;
+	}
+
+	figure{
+		margin-bottom: 50px;
+	}
+}
+
+// Security Section
+
+.security-section{
+	background: $security-bg;
+	color:#fff;
+	min-height: 700px;
+	text-align: center;
+
+	.svg-container{
+		display: inline-block;
+		width:100px;
+		height: 100px;
+		margin-bottom: -12px;
+	}
+
+	.safe-icon{
+		position: relative;
+		margin-bottom: 0px;
+	}
+	.content-container figure > img{
+		text-align: center;
+		margin: 0 auto;
+	}
+
+	figcaption > h1{
+		font-size: 1.2em;
+	}
+
+	figcaption p{
+		font-size: 0.8em;
+	}
+
+	.third-figure{
+		margin-bottom: 40px;
+	}
+}
+
+
+
+// Quotes Section
+
+.quotes-section{
+	text-align: center;
+	background: $quotes-bg;
+	color:white;
+	.svg-container{
+		display: inline-block;
+		width:100px;
+		height: 100px;
+	}
+
+	figcaption > h2{
+		font-size: 1em;
+		margin-bottom: $end-section-bottom-margin;
+	}
+}
+
+// Press Section
+
+.press-section{
+	text-align: center;
+	background: $press-bg;
+	color:white;
+
+	.svg-container{
+		display: inline-block;
+		width:140px;
+		height:50px;
+		img{
+			width:100%;
+		}
+	}
+
+	hr{
+		height: 1px;
+		background: #fff;
+		font-size: 0;
+		border: none;
+		width: 60%;
+		margin-top: 20px;
+		margin-bottom: 10px;
+	}
+	.join-section{
+		margin-bottom: $end-section-bottom-margin;
+
+
+		h1{
+			font-size: 1.6em;
+			margin-bottom: 20px;
+		}
+
+	}
+}
+
+// Footer Section
+
+footer{
+
+	background: $footer-bg;
+	ul{
+		text-align: center;
+		margin-bottom: 0px;
+
+	}
+
+	li{
+		display: block;
+		font-weight: 700;
+		margin: 0px 10px;
+		margin-bottom: 10px;
+		font-family: 'brandon-grotesque',sans-serif;
+	}
+
+	li > a{
+		text-decoration: none;
+		text-transform: uppercase;
+		transition:0.3s all;
+		color:#fff;
+
+		&:hover{
+			color:#aaa;
+		}
+	}
+
+	.svg-container{
+		display: inline-block;
+		width:35px;
+		height:35px;
+		img{
+			width: 100%;
+		}
+	}
+	.footer-nav{
+		margin-top: 20px;
+		margin-bottom: 20px;
+		li{
+			display: block;
+		}
+		
+	}
+	hr{
+		width: 60%;
+	}
+	.footer-contact{
+		margin-top: -20px !important;
+		margin-bottom: 20px;
+
+		li{
+			display: inline-block;
+		}
+	}
+
+}
+
+/*
+QUERIES from Adam Morse --- Thanks!
+
+A simple set of media queries for responsive design.
+The first covers all screen sizes larger than 48em.
+The second breakpoint targets widths of 48-64em
+Third targets screens wider than 64em
+Adjust the breakpoints as needed.
+
+
+*/
+
+/* Mobile first css here */
+
+
+@media screen and (min-width: $smallest-size) {
+
+
+
+// Intro Section
+.intro-section{
+
+	img{
+		margin-top: 12%;
+	}
+
+	.btn{
+		margin-bottom: 100px;
+		margin-top: 5px;
+	}
+}
+
+// Navigation for desktop layout
+.nav-section{
+
+	.menu-btn{
+		display: none;
+	}
+
+
+}
+
+nav{
+	background: #F8F8F8;
+	margin: 0;
+	height:52px;
+	padding: 5px;
+	border-bottom: 1px #E7E7E7 solid;
+
+
+	ul{
+		text-align: right;
+		display: inline-block;
+		margin:0;
+		padding:0;
+		text-indent: 0;
+		top:0;
+		left: -20px;
+		display: block;
+		background: none;
+		border: none;
+		visibility: visible !important;
+	}
+
+	ul > li{
+		display: inline-block;
+		padding:0;
+		margin: 0;
+		margin-left: 5px;
+		text-transform: uppercase;
+		font-family: 'brandon-grotesque',sans-serif;
+		a{
+			color:#777;
+			font-weight: 600;
+			font-size: 14px;
+			position: relative;
+			display: block;
+			padding: 10px 15px;
+			line-height: 20px;
+			text-decoration: none;
+			transition:0.3s all;
+			&:hover{
+				color:#333;
+			}
+		}
+
+		.btn{
+			padding: 0.4em 0.75em !important;
+		}	
+	}
+}
+
+.nav-section{
+	background: #F8F8F8;
+	.content-container{
+		position: relative;
+	}
+	.nav-title{
+		position: absolute;
+		left:10px;
+		top:-1px;
+	}
+
+	ul{
+		position: absolute;
+		right:10px;
+		top:6px;
+	}
+}
+
+
+
+// Product Features
+
+.product-feature-info{
+	margin-top: 50px;
+}
+
+.product-mobile{
+	display: none;
+}
+
+.product-photo{
+
+	display: inline-block;
+	position: relative;
+	.images{
+		position: absolute;
+		top:153px;
+		opacity: 0;
+		transition:0.5s opacity;
+	}
+
+}
+
+.show-product-image{
+	opacity: 1 !important;
+}
+
+.product-features-section{
+	min-height:580px;
+
+	ul > li{
+		text-align: left;
+		height: 45px;
+	}
+
+	.svg-container{
+		display: inline-block;
+		margin-right: 18px;
+	}
+}
+
+.current{
+	color:$blue-highlight;
+	path{
+		fill:$blue-highlight;
+	}
+}
+
+
+// Security Section
+.security-section{
+	min-height: 500px;
+	figure{
+		margin-top: 40px;
+	}
+
+	.safe-icon {
+		margin-bottom: -12px;
+		top:-10px;
+	}
+}
+// Quotes Section
+
+.quotes-section{
+	min-height: 500px;
+	figure{
+		margin-top: 60px;
+		h2{
+			font-size: 1.4em;
+		}
+	}
+
+
+}
+
+
+// Press Features Section
+.press-section{
+
+
+	.svg-container{
+		display: inline-block;
+		width:200px;
+		height:100px;
+	}
+}
+
+}
+
+// Footer section
+footer{
+.footer-nav{
+	margin-top: 20px !important;
+	
+	li{
+		display: inline-block;
+	}
+}
+}
+
+
+
+@media screen and (min-width: $smallest-size) and (max-width: $largest-size) {
+	.intro-section{
+		//background-position: center bottom;
+	}
+}
+
+@media screen and (min-width: $largest-size)  {
+
+}

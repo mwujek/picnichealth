@@ -1,23 +1,23 @@
 // Background colors
 
-$how-it-works-bg:#34495E;
-$security-bg:#2980B8;
-$quotes-bg:#2ECB71;
-$press-bg:#27AD60;
-$footer-bg:#232424;
+@how-it-works-bg:#34495E;
+@security-bg:#2980B8;
+@quotes-bg:#2ECB71;
+@press-bg:#27AD60;
+@footer-bg:#232424;
 
 // font & other colors
-$font-color:#001F3F;
-$blue-highlight:#0274D8;
-$dark-btn-bg: rgba(0,0,0,0.1);
+@font-color:#001F3F;
+@blue-highlight:#0274D8;
+@dark-btn-bg: rgba(0,0,0,0.1);
 
 // media queries
-$smallest-size:48em;
-$largest-size:78em;
+@smallest-size:48em;
+@largest-size:78em;
 
 // layout, padding, etc.
 
-$end-section-bottom-margin:50px;
+@end-section-bottom-margin:50px;
 
 // add Oleo Script from Google Fonts
 @import url(http://fonts.googleapis.com/css?family=Oleo+Script:400,700);
@@ -29,7 +29,7 @@ body, html{
     overflow-x: hidden;
 }
 body{
-	color: $font-color;
+	color: @font-color;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -102,31 +102,22 @@ ul{
 }
 
 .dark-btn{
-	color: $font-color !important;
-	border-color: $font-color !important;
-	background: $dark-btn-bg !important;
-	&:hover{
-		background: #ccc !important;
-	}
-
-	&:active{
-		background: #aaa !important;
-	}
+	color: @font-color !important;
+	border-color: @font-color !important;
+	background: @dark-btn-bg !important;
 }
+
+.dark-btn:hover{background: #ccc !important;}
+.dark-btn:active{background: #aaa !important;}
 
 .light-btn{
 	color: #fff !important;
 	border-color: #fff !important;
-	background: $dark-btn-bg !important;
-	&:hover{
-		background: #ccc !important;
-	}
-
-	&:active{
-		background: #aaa !important;
-	}
+	background: @dark-btn-bg !important;
 }
 
+.light-btn:hover{background: #ccc !important;}
+.light-btn:active{background: #aaa !important;}
 
 // Grid layout, sizing, and padding 
 .full-screen-container{
@@ -173,10 +164,13 @@ nav{
 		svg{
 			transition:0.3s all;
 			fill:#777;
-			&:active{
-				fill:#555;
-			}
 		}
+
+	}
+
+	nav svg:active{
+
+		fill:#555;
 
 	}
 
@@ -295,13 +289,18 @@ img{
 		text-align: center;
 	}
 
-	ul li:first-child{
-		color:$blue-highlight;
-	}
-
 	ul > li{
 		text-align: center;
 		margin-bottom: 5px;
+		transition:0.8s all;
+		&:hover{
+			cursor: pointer;
+			text-decoration: underline;
+		}
+		path{
+			transition:0.8s all;
+		}
+
 	}
 
 	ul > li > img{
@@ -315,9 +314,9 @@ img{
 		margin: 20px auto 30px auto;
 	}
 
-	.active-check{
-		fill: $blue-highlight;
-	}
+	// .active-check{
+	// 	fill: @blue-highlight;
+	// }
 
 
 
@@ -349,7 +348,7 @@ img{
 // How it works section
 .how-it-works-section{
 	text-align: center;
-	background: $how-it-works-bg;
+	background: @how-it-works-bg;
 	color:#fff;
 
 	.svg-container{
@@ -383,7 +382,7 @@ img{
 // Security Section
 
 .security-section{
-	background: $security-bg;
+	background: @security-bg;
 	color:#fff;
 	min-height: 700px;
 	text-align: center;
@@ -423,7 +422,7 @@ img{
 
 .quotes-section{
 	text-align: center;
-	background: $quotes-bg;
+	background: @quotes-bg;
 	color:white;
 	.svg-container{
 		display: inline-block;
@@ -433,7 +432,7 @@ img{
 
 	figcaption > h2{
 		font-size: 1em;
-		margin-bottom: $end-section-bottom-margin;
+		margin-bottom: @end-section-bottom-margin;
 	}
 }
 
@@ -441,7 +440,7 @@ img{
 
 .press-section{
 	text-align: center;
-	background: $press-bg;
+	background: @press-bg;
 	color:white;
 
 	.svg-container{
@@ -463,7 +462,7 @@ img{
 		margin-bottom: 10px;
 	}
 	.join-section{
-		margin-bottom: $end-section-bottom-margin;
+		margin-bottom: @end-section-bottom-margin;
 
 
 		h1{
@@ -478,7 +477,7 @@ img{
 
 footer{
 
-	background: $footer-bg;
+	background: @footer-bg;
 	ul{
 		text-align: center;
 		margin-bottom: 0px;
@@ -549,7 +548,7 @@ Adjust the breakpoints as needed.
 /* Mobile first css here */
 
 
-@media screen and (min-width: $smallest-size) {
+@media screen and (min-width: @smallest-size) {
 
 
 
@@ -657,8 +656,20 @@ nav{
 }
 
 .product-photo{
-	margin-top: 153px;
+
 	display: inline-block;
+	position: relative;
+	.images{
+		position: absolute;
+		top:153px;
+		opacity: 0;
+		transition:0.5s opacity;
+	}
+
+}
+
+.show-product-image{
+	opacity: 1 !important;
 }
 
 .product-features-section{
@@ -672,6 +683,13 @@ nav{
 	.svg-container{
 		display: inline-block;
 		margin-right: 18px;
+	}
+}
+
+.current{
+	color:@blue-highlight;
+	path{
+		fill:@blue-highlight;
 	}
 }
 
@@ -729,12 +747,12 @@ footer{
 
 
 
-@media screen and (min-width: $smallest-size) and (max-width: $largest-size) {
+@media screen and (min-width: @smallest-size) and (max-width: @largest-size) {
 	.intro-section{
 		//background-position: center bottom;
 	}
 }
 
-@media screen and (min-width: $largest-size)  {
+@media screen and (min-width: @largest-size)  {
 
 }
